@@ -17,7 +17,7 @@ final class Item {
     
     var ischecked : Bool  = false
     
-    init(time: Date, ischecked: Bool) {
+    init(time: Date, ischecked: Bool = false) {
         self.time = time
         self.ischecked = ischecked
     }

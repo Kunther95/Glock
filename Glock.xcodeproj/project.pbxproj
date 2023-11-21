@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AE5CEC482B061D6000093965 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5CEC472B061D6000093965 /* TimerView.swift */; };
 		AE5CEC4A2B076AF500093965 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5CEC492B076AF500093965 /* Timer.swift */; };
+		AE658A652B0CC781004DE046 /* WorldClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE658A642B0CC781004DE046 /* WorldClockView.swift */; };
 		AEF7928D2B03943A004A2778 /* GlockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF7928C2B03943A004A2778 /* GlockApp.swift */; };
 		AEF7928F2B03943A004A2778 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF7928E2B03943A004A2778 /* ContentView.swift */; };
 		AEF792912B03943A004A2778 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF792902B03943A004A2778 /* Item.swift */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		AE5CEC472B061D6000093965 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		AE5CEC492B076AF500093965 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		AE658A642B0CC781004DE046 /* WorldClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldClockView.swift; sourceTree = "<group>"; };
 		AEF792892B03943A004A2778 /* Glock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Glock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEF7928C2B03943A004A2778 /* GlockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlockApp.swift; sourceTree = "<group>"; };
 		AEF7928E2B03943A004A2778 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				AEF792902B03943A004A2778 /* Item.swift */,
 				AEF792922B03943C004A2778 /* Assets.xcassets */,
 				AEF792942B03943C004A2778 /* Preview Content */,
+				AE658A642B0CC781004DE046 /* WorldClockView.swift */,
 			);
 			path = Glock;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 				AEF792912B03943A004A2778 /* Item.swift in Sources */,
 				AEF7928D2B03943A004A2778 /* GlockApp.swift in Sources */,
 				AE5CEC4A2B076AF500093965 /* Timer.swift in Sources */,
+				AE658A652B0CC781004DE046 /* WorldClockView.swift in Sources */,
 				AE5CEC482B061D6000093965 /* TimerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

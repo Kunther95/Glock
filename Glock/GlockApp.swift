@@ -25,7 +25,7 @@ struct GlockApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            WorldClockView()
         }
         .modelContainer(sharedModelContainer)
     }

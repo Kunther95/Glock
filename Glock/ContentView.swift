@@ -11,6 +11,7 @@ import UIKit
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.editMode) private var editMode
     @Query  var items: [Item]
     @State private var showToggle = false
     @State private var date = Date()
@@ -18,58 +19,63 @@ struct ContentView: View {
     var index: Int = 0
     
     var body: some View {
+        
         NavigationStack{
+            
             VStack{
+                
+                
                 List{
-                HStack{
-                    Image(systemName: "bed.double.fill")
-                    Text("Sleep Wake up ")
-                        .font(.title3)
-                        .bold()
-                }
-                HStack{
-                    Text("No Alarm")
-                        .font(.title)
-                        .bold()
-                        .foregroundStyle(.secondary)
-                        
-                    
-                    Spacer()
-                    
-                    Button("SET UP") {
-                        updateCheckedValue(items: items)
-                    }
-                    
-                }
-                    Spacer()
                     HStack{
-                        Text("Other")
+                        Image(systemName: "bed.double.fill")
+                        Text("Sleep Wake up ")
                             .font(.title3)
                             .bold()
                     }
-                
-               
-                    ForEach(items){ item in
-                        HStack{
-                            Text(item.time.formatted(date: .omitted, time: .shortened))
-                                .font(.title3)
-                                .foregroundStyle(.secondary)
-                            
-                            Toggle("", isOn: Bindable(item).ischecked)
-                            DatePicker("", selection: Bindable(item).time, displayedComponents: .hourAndMinute)
-                        }
-                       
+                    HStack{
+                        Text("No Alarm")
+                            .font(.title)
+                            .bold()
+                            .foregroundStyle(.secondary)
                         
+                        
+                        Spacer()
+                        
+                        Button("SET UP")  {
+                            updateCheckedValue(items: items)
+                        }
                         
                     }
+                    Spacer()
+                    HStack{
+                        
+                        Text(" Other")
+                            .font(.title3)
+                            .bold()
+                    }
+                    
+                    ForEach(items){ item in
+                        HStack{
+                            DatePicker("", selection: Bindable(item).time, displayedComponents: .hourAndMinute)
+                            Spacer()
+                                .frame(maxWidth: .infinity ,alignment: .leading)
+                            Toggle("", isOn: Bindable(item).ischecked)
+                        }
+                    }
+                    .onDelete(perform: { indexSet in
+                        for index in indexSet {
+                            modelContext.delete(items[index])
+                        }
+                    })
+                    
                 }
                 
-            }
-            .navigationTitle("Alarms")
-            
-            
-            .toolbar {
                 
+                
+            }
+            
+            .navigationTitle("Alarms")
+            .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     EditButton()
                 }
@@ -78,15 +84,17 @@ struct ContentView: View {
                         Label("Add Item", systemImage: "plus")
                         
                     }
-                
+                    
+                }
             }
         }
-        }
-            
-          
+        
+        
+        
+        
+        
         
     }
-    
     
     private func updateCheckedValue(items: [Item]){
         
@@ -109,7 +117,7 @@ struct ContentView: View {
     
 }
 
-#Preview {
-    ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
-}
+//#Preview {
+//    ContentView()
+//        .modelContainer(for: Item.self, inMemory: true)
+//}
