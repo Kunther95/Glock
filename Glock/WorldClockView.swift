@@ -10,7 +10,7 @@ import SwiftUI
 struct WorldClockView: View {
     var body: some View {
         TabView{
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            Text("Hello, This Screen is Empty!")
             
                 .tabItem {
                     Label ("World Clock", systemImage: "globe")
